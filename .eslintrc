@@ -5,10 +5,11 @@
     },
     "extends": "airbnb",
     "rules": {
-        "no-console": "off",
+        "no-console": "warn",
         "class-methods-use-this": "off",
         "max-len": "off",
         "no-nested-ternary": "off",
+        "no-unused-vars": "warn",
         "no-restricted-globals": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}]
     }

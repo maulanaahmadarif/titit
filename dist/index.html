@@ -43,6 +43,16 @@
         }
         .tw-share {
             cursor: pointer;
+            padding: 3px 5px 0;
+        }
+        .arrow-pop {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-top: 8px solid #000;
         }
         @keyframes pop-upwards {
             0% {
@@ -121,6 +131,16 @@
             </p>
         </div>
     </div>
-    <script src="./titit.js"></script>
+    <script src="titit.js"></script>
+    <script>
+        const ydTititOpt = {
+            color: '#fff',
+            containerColor: '#000',
+            elem: '.content p',
+            parentElem: '.content',
+        };
+        const ydTitit = new Titit(ydTititOpt);
+        ydTitit.init();
+    </script>
 </body>
 </html>

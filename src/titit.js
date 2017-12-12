@@ -8,6 +8,14 @@ class Titit {
     this.createPop();
     this.selectIt();
     this.tweetIt();
+
+    document.querySelector(this.options.parentElem).addEventListener('click', (e) => {
+      if (e.target.matches('p')) return;
+      const pop = document.querySelector('.titit__pop');
+      if (pop.classList.contains('titit__pop--show')) {
+        pop.classList.remove('titit__pop--show');
+      }
+    });
   }
 
   createPop() {
@@ -32,9 +40,10 @@ class Titit {
 
   tweetIt() {
     const twBtn = document.querySelector('.tw-share');
-    console.log(this.tweet);
     twBtn.addEventListener('click', () => {
       this.popUp(this.tweet, 'Share', 600, 300);
+      const pop = document.querySelector('.titit__pop');
+      pop.classList.remove('titit__pop--show');
     });
   }
 
@@ -54,7 +63,6 @@ class Titit {
   showPop() {
     const selection = window.getSelection();
     const textSelection = selection.toString().trim();
-    console.log(textSelection);
     const tititPop = document.querySelector('.titit__pop');
     if (textSelection < 1) {
       tititPop.classList.remove('titit__pop--show');
