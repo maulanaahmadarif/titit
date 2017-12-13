@@ -9,7 +9,9 @@ class Titit {
     this.selectIt();
     this.tweetIt();
 
-    document.querySelector(this.options.parentElem).addEventListener('click', (e) => {
+    const parentElem = document.querySelector(this.options.elem).parentElement;
+
+    parentElem.addEventListener('click', (e) => {
       if (e.target.matches('p')) return;
       const pop = document.querySelector('.titit__pop');
       if (pop.classList.contains('titit__pop--show')) {
@@ -34,7 +36,7 @@ class Titit {
   }
 
   selectIt() {
-    const elem = document.querySelectorAll(`${this.options.parentElem}`);
+    const elem = document.querySelectorAll(`${this.options.elem}`);
     elem.forEach(el => el.addEventListener('mouseup', () => this.showPop()));
   }
 

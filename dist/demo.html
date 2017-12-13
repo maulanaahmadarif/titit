@@ -13,70 +13,8 @@
             justify-content: center;
             align-items: center;
         }
-        .titit__pop {
-            max-width: 0;
-            top: 0;
-            left: 0;
-            transition: none;
-            visibility: hidden;
-            position: absolute;
-
-            background-color: #000;
-            color: #fff;
-            border-radius: 5px;
-        }
-        .titit__pop--show {
-            display: inline-block;
-            position: absolute;
-            transform: translate(-50%, 0);
-            animation: pop-upwards 180ms forwards linear;
-            visibility: visible;
-            transition: top 75ms ease-out,left 75ms ease-out;
-            max-width: 300px;
-        }
-        .container {
-            max-width: 768px;
-            margin-left: auto;
-            margin-right: auto;
-            overflow-y: auto;
-            height: 70vh;
-        }
-        .tw-share {
-            cursor: pointer;
-            padding: 3px 5px 0;
-        }
-        .arrow-pop {
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-right: 8px solid transparent;
-            border-left: 8px solid transparent;
-            border-top: 8px solid #000;
-        }
-        @keyframes pop-upwards {
-            0% {
-                transform: translate(-50%, -30px);
-                opacity: 0;
-            }
-            20% {
-                transform: translate(-50%, -20px);
-                opacity: .7;
-            }
-            40% {
-                transform: translate(-50%, -10px);
-                opacity: 1;
-            }
-            70% {
-                transform: translate(-50%, -5px);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, 0);
-                opacity: 1;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="titit.min.css">
 </head>
 <body>
     <div class="container">
@@ -131,13 +69,12 @@
             </p>
         </div>
     </div>
-    <script src="titit.js"></script>
+    <script src="titit.min.js"></script>
     <script>
         const ydTititOpt = {
             color: '#fff',
             containerColor: '#000',
             elem: '.content p',
-            parentElem: '.content',
         };
         const ydTitit = new Titit(ydTititOpt);
         ydTitit.init();
